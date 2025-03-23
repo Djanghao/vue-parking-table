@@ -1,0 +1,17 @@
+# Development
+node_modules
+.vscode
+.idea
+.DS_Store
+
+# Source control
+.git
+.gitignore
+
+# Build and test
+coverage
+.nyc_output
+*.log
+
+# Example files
+Example.vue 

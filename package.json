@@ -1,0 +1,31 @@
+{
+  "name": "@houston_zhang/vue-parking-table",
+  "version": "1.0.0",
+  "description": "A Vue 3 component for visualizing and interacting with parking lot layouts",
+  "main": "dist/vue-parking-table.js",
+  "module": "dist/vue-parking-table.mjs",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "vite build"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "component",
+    "parking",
+    "parking-lot",
+    "visualization"
+  ],
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.3",
+    "vite": "^6.2.2"
+  }
+}
