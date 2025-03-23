@@ -4,6 +4,8 @@ import { resolve } from "path";
 
 export default defineConfig({
   plugins: [vue()],
+  // Ensure CSV files are treated properly
+  assetsInclude: ["**/*.csv"],
   build: {
     lib: {
       entry: resolve(__dirname, "src/index.js"),
@@ -18,6 +20,13 @@ export default defineConfig({
         // Global variable used when the bundle is loaded in UMD format
         globals: {
           vue: "Vue",
+        },
+        // Make sure assets are properly handled
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name.endsWith(".csv")) {
+            return "assets/[name][extname]";
+          }
+          return "assets/[name]-[hash][extname]";
         },
       },
     },

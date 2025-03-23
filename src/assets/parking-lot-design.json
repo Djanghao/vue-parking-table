@@ -1,0 +1,3054 @@
+{
+  "grid": [
+    [
+      {
+        "type": "facility",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": false,
+        "verticalLine": false
+      }
+    ],
+    [
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      }
+    ],
+    [
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      }
+    ],
+    [
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      }
+    ],
+    [
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "facility",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      }
+    ],
+    [
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "facility",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      }
+    ],
+    [
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "facility",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      }
+    ],
+    [
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "facility",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      }
+    ],
+    [
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      }
+    ],
+    [
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      }
+    ],
+    [
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      }
+    ],
+    [
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      }
+    ],
+    [
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      }
+    ],
+    [
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      }
+    ],
+    [
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      }
+    ],
+    [
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      }
+    ],
+    [
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "facility",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      }
+    ],
+    [
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      }
+    ],
+    [
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "parking-space",
+        "horizontalLine": true,
+        "verticalLine": true
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": true,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      }
+    ],
+    [
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      },
+      {
+        "type": "open-area",
+        "horizontalLine": false,
+        "verticalLine": false
+      }
+    ]
+  ],
+  "startPoint": {
+    "row": 18,
+    "col": 27
+  },
+  "endPoint": {
+    "row": 9,
+    "col": 6
+  },
+  "version": "1.0",
+  "exportDate": "2025-03-22T22:38:42.529Z"
+}

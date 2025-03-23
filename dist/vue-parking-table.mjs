@@ -1,6 +1,6 @@
-import { createElementBlock as L, openBlock as D, createElementVNode as $, withDirectives as z, withKeys as I, vModelText as E, Fragment as T, renderList as V, normalizeStyle as K, normalizeClass as M, createCommentVNode as R, toDisplayString as A, ref as b, onMounted as W, nextTick as B } from "vue";
-const N = (o, t) => Math.abs(o.row - t.row) + Math.abs(o.col - t.col), j = (o, t, r) => !!(r.row < t.row && o[r.row][r.col].horizontalLine || r.row > t.row && o[t.row][t.col].horizontalLine || r.col < t.col && o[r.row][r.col].verticalLine || r.col > t.col && o[t.row][t.col].verticalLine), J = (o, t, r, l) => {
-  const { row: i, col: u } = o, p = [], c = [
+import { createElementBlock as m, openBlock as w, createElementVNode as E, withDirectives as N, withKeys as V, vModelText as $, Fragment as B, renderList as P, normalizeStyle as _, normalizeClass as T, createCommentVNode as K, toDisplayString as R, ref as d, onMounted as I, nextTick as J } from "vue";
+const O = (i, e) => Math.abs(i.row - e.row) + Math.abs(i.col - e.col), M = (i, e, o) => !!(o.row < e.row && i[o.row][o.col].horizontalLine || o.row > e.row && i[e.row][e.col].horizontalLine || o.col < e.col && i[o.row][o.col].verticalLine || o.col > e.col && i[e.row][e.col].verticalLine), A = (i, e, o, n) => {
+  const { row: L, col: f } = i, p = [], t = [
     { row: -1, col: 0 },
     // Up
     { row: 0, col: 1 },
@@ -10,230 +10,259 @@ const N = (o, t) => Math.abs(o.row - t.row) + Math.abs(o.col - t.col), j = (o, t
     { row: 0, col: -1 }
     // Left
   ];
-  for (const d of c) {
-    const g = i + d.row, y = u + d.col;
-    if (g >= 0 && g < r && y >= 0 && y < l) {
-      const k = t[g][y];
-      if (k.type === "open-area" || k.type === "parking-space") {
-        const C = { row: i, col: u }, v = { row: g, col: y };
-        j(t, C, v) || p.push(v);
+  for (const v of t) {
+    const c = L + v.row, g = f + v.col;
+    if (c >= 0 && c < o && g >= 0 && g < n) {
+      const C = e[c][g];
+      if (C.type === "open-area" || C.type === "parking-space") {
+        const S = { row: L, col: f }, z = { row: c, col: g };
+        M(e, S, z) || p.push(z);
       }
     }
   }
   return p;
-}, U = (o, t, r, l, i) => {
-  if (!o || !t)
+}, W = (i, e, o, n, L) => {
+  if (!i || !e)
     return null;
-  const u = r[o.row][o.col], p = r[t.row][t.col];
-  if (!((u.type === "open-area" || u.type === "parking-space") && (p.type === "open-area" || p.type === "parking-space")))
+  const f = o[i.row][i.col], p = o[e.row][e.col];
+  if (!((f.type === "open-area" || f.type === "parking-space") && (p.type === "open-area" || p.type === "parking-space")))
     return null;
-  const c = [o], d = /* @__PURE__ */ new Set(), g = {}, y = {}, k = {};
-  for (let v = 0; v < l; v++)
-    for (let w = 0; w < i; w++) {
-      const S = `${v}-${w}`;
-      y[S] = 1 / 0, k[S] = 1 / 0;
+  const t = [i], v = /* @__PURE__ */ new Set(), c = {}, g = {}, C = {};
+  for (let z = 0; z < n; z++)
+    for (let u = 0; u < L; u++) {
+      const D = `${z}-${u}`;
+      g[D] = 1 / 0, C[D] = 1 / 0;
     }
-  const C = `${o.row}-${o.col}`;
-  for (y[C] = 0, k[C] = N(o, t); c.length > 0; ) {
-    let v = 0;
-    for (let h = 1; h < c.length; h++) {
-      const f = `${c[h].row}-${c[h].col}`, P = `${c[v].row}-${c[v].col}`;
-      k[f] < k[P] && (v = h);
+  const S = `${i.row}-${i.col}`;
+  for (g[S] = 0, C[S] = O(i, e); t.length > 0; ) {
+    let z = 0;
+    for (let h = 1; h < t.length; h++) {
+      const y = `${t[h].row}-${t[h].col}`, a = `${t[z].row}-${t[z].col}`;
+      C[y] < C[a] && (z = h);
     }
-    const w = c[v], S = `${w.row}-${w.col}`;
-    if (w.row === t.row && w.col === t.col) {
+    const u = t[z], D = `${u.row}-${u.col}`;
+    if (u.row === e.row && u.col === e.col) {
       const h = [];
-      let f = w;
-      for (; g[`${f.row}-${f.col}`]; )
-        h.push(f), f = g[`${f.row}-${f.col}`];
-      return h.push(o), h.reverse();
+      let y = u;
+      for (; c[`${y.row}-${y.col}`]; )
+        h.push(y), y = c[`${y.row}-${y.col}`];
+      return h.push(i), h.reverse();
     }
-    c.splice(v, 1), d.add(S);
-    const O = J(w, r, l, i);
-    for (const h of O) {
-      const f = `${h.row}-${h.col}`;
-      if (d.has(f))
+    t.splice(z, 1), v.add(D);
+    const F = A(u, o, n, L);
+    for (const h of F) {
+      const y = `${h.row}-${h.col}`;
+      if (v.has(y))
         continue;
-      const P = y[S] + 1;
-      if (!c.some(
-        (e) => e.row === h.row && e.col === h.col
+      const a = g[D] + 1;
+      if (!t.some(
+        (l) => l.row === h.row && l.col === h.col
       ))
-        c.push(h);
-      else if (P >= y[f])
+        t.push(h);
+      else if (a >= g[y])
         continue;
-      g[f] = w, y[f] = P, k[f] = y[f] + N(h, t);
+      c[y] = u, g[y] = a, C[y] = g[y] + O(h, e);
     }
   }
   return null;
-}, q = (o) => {
-  if (!o)
+}, j = (i) => {
+  if (!i)
     return [];
-  const t = o.split(`
-`).filter((l) => l.trim() !== ""), r = [];
-  for (let l = 0; l < t.length; l++) {
-    const i = t[l].split(",").map((u) => u.trim());
-    r.push(i);
+  const e = i.split(`
+`).filter((n) => n.trim() !== ""), o = [];
+  for (let n = 0; n < e.length; n++) {
+    const L = e[n].split(",").map((f) => f.trim());
+    o.push(L);
   }
-  return r;
-}, x = (o, t, r) => {
-  if (!o || !Array.isArray(o) || o.length === 0)
+  return o;
+}, U = (i, e, o) => {
+  if (!i || !Array.isArray(i) || i.length === 0)
     return null;
-  if (t >= 0 && t < o.length && r >= 0 && o[t] && r < o[t].length) {
-    const l = o[t][r];
-    return l && l !== "" ? l : null;
+  if (e >= 0 && e < i.length && o >= 0 && i[e] && o < i[e].length) {
+    const n = i[e][o];
+    return n && n !== "" ? n : null;
   }
   return null;
-}, H = (o, t) => {
-  const r = o.__vccOpts || o;
-  for (const [l, i] of t)
-    r[l] = i;
-  return r;
-}, Q = {
+}, Z = /* @__PURE__ */ JSON.parse('[[{"type":"facility","horizontalLine":false,"verticalLine":false},{"type":"facility","horizontalLine":false,"verticalLine":false},{"type":"facility","horizontalLine":false,"verticalLine":false},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"facility","horizontalLine":false,"verticalLine":false},{"type":"facility","horizontalLine":false,"verticalLine":false},{"type":"facility","horizontalLine":false,"verticalLine":false}],[{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false}],[{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false}],[{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false}],[{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":true,"verticalLine":true},{"type":"parking-space","horizontalLine":true,"verticalLine":true},{"type":"open-area","horizontalLine":true,"verticalLine":true},{"type":"parking-space","horizontalLine":true,"verticalLine":true},{"type":"open-area","horizontalLine":true,"verticalLine":true},{"type":"open-area","horizontalLine":true,"verticalLine":true},{"type":"open-area","horizontalLine":true,"verticalLine":true},{"type":"open-area","horizontalLine":true,"verticalLine":true},{"type":"parking-space","horizontalLine":true,"verticalLine":true},{"type":"parking-space","horizontalLine":true,"verticalLine":true},{"type":"open-area","horizontalLine":true,"verticalLine":true},{"type":"open-area","horizontalLine":true,"verticalLine":true},{"type":"open-area","horizontalLine":true,"verticalLine":true},{"type":"parking-space","horizontalLine":true,"verticalLine":true},{"type":"open-area","horizontalLine":true,"verticalLine":true},{"type":"parking-space","horizontalLine":true,"verticalLine":true},{"type":"open-area","horizontalLine":true,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"facility","horizontalLine":false,"verticalLine":true},{"type":"facility","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false}],[{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"facility","horizontalLine":false,"verticalLine":true},{"type":"facility","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false}],[{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"facility","horizontalLine":false,"verticalLine":true},{"type":"facility","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false}],[{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"facility","horizontalLine":false,"verticalLine":true},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false}],[{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false}],[{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":true,"verticalLine":false},{"type":"open-area","horizontalLine":true,"verticalLine":false},{"type":"open-area","horizontalLine":true,"verticalLine":true},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false}],[{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false}],[{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":true,"verticalLine":false},{"type":"open-area","horizontalLine":true,"verticalLine":false},{"type":"open-area","horizontalLine":true,"verticalLine":true},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false}],[{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false}],[{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false}],[{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false}],[{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false}],[{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"facility","horizontalLine":true,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false}],[{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"parking-space","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false}],[{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":true},{"type":"open-area","horizontalLine":true,"verticalLine":true},{"type":"parking-space","horizontalLine":true,"verticalLine":true},{"type":"parking-space","horizontalLine":true,"verticalLine":true},{"type":"parking-space","horizontalLine":true,"verticalLine":true},{"type":"open-area","horizontalLine":true,"verticalLine":true},{"type":"parking-space","horizontalLine":true,"verticalLine":true},{"type":"parking-space","horizontalLine":true,"verticalLine":true},{"type":"parking-space","horizontalLine":true,"verticalLine":true},{"type":"open-area","horizontalLine":true,"verticalLine":true},{"type":"parking-space","horizontalLine":true,"verticalLine":true},{"type":"parking-space","horizontalLine":true,"verticalLine":true},{"type":"parking-space","horizontalLine":true,"verticalLine":true},{"type":"open-area","horizontalLine":true,"verticalLine":true},{"type":"parking-space","horizontalLine":true,"verticalLine":true},{"type":"parking-space","horizontalLine":true,"verticalLine":true},{"type":"open-area","horizontalLine":true,"verticalLine":true},{"type":"parking-space","horizontalLine":true,"verticalLine":true},{"type":"open-area","horizontalLine":true,"verticalLine":false},{"type":"open-area","horizontalLine":true,"verticalLine":false},{"type":"open-area","horizontalLine":true,"verticalLine":false},{"type":"open-area","horizontalLine":true,"verticalLine":false},{"type":"open-area","horizontalLine":true,"verticalLine":false},{"type":"open-area","horizontalLine":true,"verticalLine":false},{"type":"open-area","horizontalLine":true,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false}],[{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false},{"type":"open-area","horizontalLine":false,"verticalLine":false}]]'), q = { row: 18, col: 27 }, H = { row: 9, col: 6 }, Q = "1.0", X = "2025-03-22T22:38:42.529Z", Y = {
+  grid: Z,
+  startPoint: q,
+  endPoint: H,
+  version: Q,
+  exportDate: X
+}, G = ` ,,,,,,,,,,,,,,,,,,,\r
+,,,,,,,,,,,,,,,,,,,\r
+,,,,,,,,,,,,,,,,,,,\r
+,,,B2,B3,B4,B5,B6,B7,B8,B9,B10,B11,B12,B13,B14,B15,B16,B17,B18\r
+,,,B2,B3,B4,B5,B6,B7,B8,B9,B10,B11,B12,B13,B14,B15,B16,B17,B18\r
+,,,C2,C3,C4,C5,C6,C7,C8,C9,C10,C11,C12,C13,C14,C15,C16,C17,C18\r
+,,,C2,C3,C4,C5,C6,C7,C8,C9,C10,C11,C12,C13,C14,C15,C16,C17,C18\r
+,,,,,,,,,,,,,,,,,,,\r
+,,,,,,,,,,,,,,,,,,,\r
+,,,D2,D3,D4,D5,D6,D7,D8,D9,D10,D11,D12,D13,D14,D15,D16,D17,D18\r
+,,,D2,D3,D4,D5,D6,D7,D8,D9,D10,D11,D12,D13,D14,D15,D16,D17,D18\r
+,,,,,,,,,,,,,,,,,,,\r
+,,,,,,,,,,,,,,,,,,,\r
+,,,E2,E3,E4,E5,E6,E7,E8,E9,E10,E11,E12,E13,E14,E15,E16,E17,E18\r
+,,,E2,E3,E4,E5,E6,E7,E8,E9,E10,E11,E12,E13,E14,E15,E16,E17,E18\r
+,,,,,,,,,,,,,,,,,,,\r
+,,,,,,,,,,,,,,,,,,,\r
+,,,F2,F3,F4,F5,F6,F7,F8,F9,F10,F11,F12,F13,F14,F15,F16,F17,F18\r
+,,,F2,F3,F4,F5,F6,F7,F8,F9,F10,F11,F12,F13,F14,F15,F16,F17,F18`, x = (i, e) => {
+  const o = i.__vccOpts || i;
+  for (const [n, L] of e)
+    o[n] = L;
+  return o;
+}, ee = {
   name: "ParkingTable",
-  setup() {
-    const r = b([]), l = b([]), i = b(null), u = b(null), p = b([]), c = b(!1), d = b(""), g = (e = null) => {
-      if (e && Array.isArray(e) && e.length === 20 && e[0].length === 30)
-        return e;
-      const a = [];
-      for (let n = 0; n < 20; n++) {
-        const s = [];
-        for (let m = 0; m < 30; m++)
-          s.push({
+  props: {
+    // Allow overriding default files
+    customDesignJSON: {
+      type: Object,
+      default: null
+    },
+    customDesignCSV: {
+      type: String,
+      default: null
+    }
+  },
+  setup(i) {
+    const n = d([]), L = d([]), f = d(null), p = d(null), t = d([]), v = d(!1), c = d(""), g = (a = null) => {
+      if (a && Array.isArray(a) && a.length === 20 && a[0].length === 30)
+        return a;
+      const s = [];
+      for (let l = 0; l < 20; l++) {
+        const r = [];
+        for (let k = 0; k < 30; k++)
+          r.push({
             type: "open-area",
             horizontalLine: !1,
             verticalLine: !1
           });
-        a.push(s);
+        s.push(r);
       }
-      return a;
-    }, y = async () => {
+      return s;
+    }, C = () => {
       try {
-        const e = await fetch("/src/assets/parking-lot-design.csv");
-        if (!e.ok) {
-          console.error("Failed to load CSV file:", e.statusText);
-          return;
-        }
-        const a = await e.text();
-        l.value = q(a), console.log("Parking spot IDs loaded from CSV:", l.value);
-      } catch (e) {
-        console.error("Error loading parking spot IDs from CSV:", e);
+        const a = i.customDesignCSV || G;
+        L.value = j(a), console.log("Parking spot IDs loaded from CSV:", L.value);
+      } catch (a) {
+        console.error("Error loading parking spot IDs from CSV:", a);
       }
-    }, k = (e, a) => x(l.value, e, a), C = () => {
-      if (!d.value.trim()) return;
-      const e = d.value.trim(), a = [];
-      for (let n = 0; n < r.value.length; n++)
-        for (let s = 0; s < r.value[n].length; s++)
-          r.value[n][s].number === e && a.push({ row: n, col: s });
-      if (a.length === 0) {
-        for (let n = 0; n < l.value.length; n++)
-          if (l.value[n]) {
-            for (let s = 0; s < l.value[n].length; s++)
-              if (l.value[n][s] === e && n < r.value.length && s < r.value[n].length) {
-                const m = r.value[n][s];
-                (m.type === "parking-space" || m.type === "open-area") && a.push({ row: n, col: s });
+    }, S = (a, s) => U(L.value, a, s), z = () => {
+      if (!c.value.trim()) return;
+      const a = c.value.trim(), s = [];
+      for (let l = 0; l < n.value.length; l++)
+        for (let r = 0; r < n.value[l].length; r++)
+          n.value[l][r].number === a && s.push({ row: l, col: r });
+      if (s.length === 0) {
+        for (let l = 0; l < L.value.length; l++)
+          if (L.value[l]) {
+            for (let r = 0; r < L.value[l].length; r++)
+              if (L.value[l][r] === a && l < n.value.length && r < n.value[l].length) {
+                const k = n.value[l][r];
+                (k.type === "parking-space" || k.type === "open-area") && s.push({ row: l, col: r });
               }
           }
       }
-      a.length > 0 ? (u.value = a[0], i.value && (v(), c.value = !0), alert(`End point set to spot "${e}" successfully!`)) : alert(`No spot with ID "${e}" found!`);
-    }, v = () => {
-      i.value && u.value && (p.value = [], B(() => {
-        const e = U(
-          i.value,
-          u.value,
-          r.value,
+      s.length > 0 ? (p.value = s[0], f.value && (u(), v.value = !0), alert(`End point set to spot "${a}" successfully!`)) : alert(`No spot with ID "${a}" found!`);
+    }, u = () => {
+      f.value && p.value && (t.value = [], J(() => {
+        const a = W(
+          f.value,
+          p.value,
+          n.value,
           20,
           30
         );
-        p.value = e || [];
+        t.value = a || [];
       }));
-    }, w = async () => {
+    }, D = () => {
       try {
-        await y();
-        const e = await fetch("/src/assets/parking-lot-design.json");
-        if (!e.ok) {
-          console.error("Failed to load JSON file:", e.statusText);
-          return;
-        }
-        const a = await e.json();
-        r.value = g(a.grid), i.value = { row: 18, col: 27 }, u.value = null, p.value = [], c.value = !1, console.log("Parking lot design loaded successfully");
-      } catch (e) {
-        console.error("Error loading parking lot design:", e);
+        C();
+        const a = i.customDesignJSON || Y;
+        n.value = g(a.grid), a.startPoint ? f.value = a.startPoint : f.value = { row: 18, col: 27 }, p.value = null, t.value = [], v.value = !1, console.log("Parking lot design loaded successfully");
+      } catch (a) {
+        console.error("Error loading parking lot design:", a);
       }
-    }, S = (e, a, n) => {
-      const s = ["grid-cell"];
-      n.type && s.push(n.type), n.horizontalLine && s.push("parking-line-h"), n.verticalLine && s.push("parking-line-v");
-      const m = _(e, a, n) !== null;
-      return i.value && i.value.row === e && i.value.col === a && (s.push("start-point"), m && s.push("with-number")), u.value && u.value.row === e && u.value.col === a && (s.push("end-point"), m && s.push("with-number")), h(e, a) && !(i.value && i.value.row === e && i.value.col === a) && !(u.value && u.value.row === e && u.value.col === a) && (m ? s.push("path-with-number") : s.push("path")), s;
-    }, O = (e, a) => h(e, a) && !(i.value && i.value.row === e && i.value.col === a) && !(u.value && u.value.row === e && u.value.col === a) ? {
-      "animation-delay": P(e, a)
-    } : {}, h = (e, a) => c.value && p.value.some((n) => n.row === e && n.col === a), f = (e, a) => p.value.findIndex(
-      (n) => n.row === e && n.col === a
-    ), P = (e, a) => {
-      const n = f(e, a);
-      if (n === -1) return 0;
-      const s = p.value.length;
-      if (s <= 1) return 0;
-      const m = 0.3 / (s - 1), F = n * m;
-      return Math.min(F, 0.3).toFixed(3) + "s";
-    }, _ = (e, a, n) => n.type !== "parking-space" && n.type !== "open-area" ? null : n.number ? n.number : k(e, a);
-    return W(() => {
-      w();
+    }, F = (a, s, l) => {
+      const r = ["grid-cell"];
+      l.type && r.push(l.type), l.horizontalLine && r.push("parking-line-h"), l.verticalLine && r.push("parking-line-v");
+      const k = y(a, s, l) !== null;
+      return f.value && f.value.row === a && f.value.col === s && (r.push("start-point"), k && r.push("with-number")), p.value && p.value.row === a && p.value.col === s && (r.push("end-point"), k && r.push("with-number")), v.value && t.value.length > 0 && t.value.some(
+        (b) => b.row === a && b.col === s
+      ) && (r.push("path-cell"), t.value[0].row === a && t.value[0].col === s ? r.push("path-start") : t.value[t.value.length - 1].row === a && t.value[t.value.length - 1].col === s ? r.push("path-end") : r.push("path-middle")), r;
+    }, h = (a, s) => {
+      const l = {};
+      if (v.value && t.value.length > 0) {
+        const r = t.value.findIndex(
+          (k) => k.row === a && k.col === s
+        );
+        r >= 0 && (l.animationDelay = `${r * 0.1}s`);
+      }
+      return l;
+    }, y = (a, s, l) => l.number ? l.number : S(a, s);
+    return I(() => {
+      D();
     }), {
-      grid: r,
-      startPoint: i,
-      endPoint: u,
-      path: p,
-      isPathVisible: c,
-      spotIdToSearch: d,
-      handleSpotSearch: C,
-      getCellClasses: S,
-      getCellStyles: O,
-      getDisplayParkingNumber: _
+      grid: n,
+      parkingSpotIds: L,
+      startPoint: f,
+      endPoint: p,
+      path: t,
+      isPathVisible: v,
+      spotIdToSearch: c,
+      handleSpotSearch: z,
+      calculatePath: u,
+      getCellClasses: F,
+      getCellStyles: h,
+      getDisplayParkingNumber: y
     };
   }
-}, X = { class: "parking-table" }, Y = { class: "search-container" }, Z = { class: "grid-container" }, G = {
+}, ae = { class: "parking-table" }, ie = { class: "search-container" }, ne = { class: "grid-container" }, te = {
   key: 0,
   class: "parking-number"
 };
-function ee(o, t, r, l, i, u) {
-  return D(), L("div", X, [
-    $("div", Y, [
-      z($("input", {
+function le(i, e, o, n, L, f) {
+  return w(), m("div", ae, [
+    E("div", ie, [
+      N(E("input", {
         type: "text",
         class: "spot-search-input",
-        "onUpdate:modelValue": t[0] || (t[0] = (p) => l.spotIdToSearch = p),
+        "onUpdate:modelValue": e[0] || (e[0] = (p) => n.spotIdToSearch = p),
         placeholder: "Enter license plate...",
-        onKeyup: t[1] || (t[1] = I((...p) => l.handleSpotSearch && l.handleSpotSearch(...p), ["enter"]))
+        onKeyup: e[1] || (e[1] = V((...p) => n.handleSpotSearch && n.handleSpotSearch(...p), ["enter"]))
       }, null, 544), [
-        [E, l.spotIdToSearch]
+        [$, n.spotIdToSearch]
       ]),
-      $("button", {
+      E("button", {
         class: "search-button",
-        onClick: t[2] || (t[2] = (...p) => l.handleSpotSearch && l.handleSpotSearch(...p))
+        onClick: e[2] || (e[2] = (...p) => n.handleSpotSearch && n.handleSpotSearch(...p))
       }, " Find Route ")
     ]),
-    $("div", Z, [
-      (D(!0), L(T, null, V(l.grid, (p, c) => (D(), L(T, { key: c }, [
-        (D(!0), L(T, null, V(p, (d, g) => (D(), L("div", {
-          key: `${c}-${g}`,
-          class: M(l.getCellClasses(c, g, d)),
-          style: K(l.getCellStyles(c, g))
+    E("div", ne, [
+      (w(!0), m(B, null, P(n.grid, (p, t) => (w(), m(B, { key: t }, [
+        (w(!0), m(B, null, P(p, (v, c) => (w(), m("div", {
+          key: `${t}-${c}`,
+          class: T(n.getCellClasses(t, c, v)),
+          style: _(n.getCellStyles(t, c))
         }, [
-          l.getDisplayParkingNumber(c, g, d) ? (D(), L("span", G, A(l.getDisplayParkingNumber(c, g, d)), 1)) : R("", !0)
+          n.getDisplayParkingNumber(t, c, v) ? (w(), m("span", te, R(n.getDisplayParkingNumber(t, c, v)), 1)) : K("", !0)
         ], 6))), 128))
       ], 64))), 128))
     ])
   ]);
 }
-const te = /* @__PURE__ */ H(Q, [["render", ee]]), oe = {
-  install(o) {
-    o.component("ParkingTable", te);
+const re = /* @__PURE__ */ x(ee, [["render", le]]), se = {
+  install(i) {
+    i.component("ParkingTable", re);
   }
 };
 export {
-  oe as VueParkingTablePlugin,
-  te as default,
-  U as findPath,
-  x as getSpotIdFromCSV,
-  q as parseCSV
+  se as VueParkingTablePlugin,
+  re as default,
+  G as defaultDesignCSV,
+  Y as defaultDesignJSON,
+  W as findPath,
+  U as getSpotIdFromCSV,
+  j as parseCSV
 };

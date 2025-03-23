@@ -37,10 +37,25 @@
 import { ref, onMounted, nextTick } from "vue";
 import { findPath } from "../utils/pathfinding";
 import { parseCSV, getSpotIdFromCSV } from "../utils/csvParser";
+// Import the default parking lot design files
+import defaultParkingLotDesignJSON from "../assets/parking-lot-design.json";
+// CSV files need to be imported as raw text
+import defaultParkingLotDesignCSV from "../assets/parking-lot-design.csv?raw";
 
 export default {
   name: "ParkingTable",
-  setup() {
+  props: {
+    // Allow overriding default files
+    customDesignJSON: {
+      type: Object,
+      default: null,
+    },
+    customDesignCSV: {
+      type: String,
+      default: null,
+    },
+  },
+  setup(props) {
     // Grid dimensions
     const ROWS = 20;
     const COLS = 30;
@@ -54,7 +69,11 @@ export default {
     const isPathVisible = ref(false);
     const spotIdToSearch = ref("");
 
-    // Initialize grid with empty cells
+    /**
+     * Initialize grid with empty cells or use provided custom grid
+     * @param {Array|null} customGrid - Optional custom grid configuration
+     * @returns {Array} - The initialized grid
+     */
     const initializeGrid = (customGrid = null) => {
       // If a custom grid is provided and it has correct dimensions, use it
       if (
@@ -82,18 +101,14 @@ export default {
       return newGrid;
     };
 
-    // Function to load the CSV file with parking spot IDs
-    const loadParkingSpotIdsFromCSV = async () => {
+    /**
+     * Load parking spot IDs from CSV content
+     */
+    const loadParkingSpotIdsFromCSV = () => {
       try {
-        // Load the CSV file from assets
-        const response = await fetch("/src/assets/parking-lot-design.csv");
+        // Use either the custom CSV or the default imported one
+        const csvContent = props.customDesignCSV || defaultParkingLotDesignCSV;
 
-        if (!response.ok) {
-          console.error("Failed to load CSV file:", response.statusText);
-          return;
-        }
-
-        const csvContent = await response.text();
         // Parse the CSV content
         parkingSpotIds.value = parseCSV(csvContent);
         console.log("Parking spot IDs loaded from CSV:", parkingSpotIds.value);
@@ -102,12 +117,19 @@ export default {
       }
     };
 
-    // Get a spot ID from the loaded CSV data
+    /**
+     * Get a spot ID from the loaded CSV data
+     * @param {number} row - Grid row index
+     * @param {number} col - Grid column index
+     * @returns {string|null} - Spot ID or null if not found
+     */
     const getSpotId = (row, col) => {
       return getSpotIdFromCSV(parkingSpotIds.value, row, col);
     };
 
-    // Search for a parking spot and set the endpoint
+    /**
+     * Search for a parking spot and set the endpoint
+     */
     const handleSpotSearch = () => {
       if (!spotIdToSearch.value.trim()) return;
 
@@ -162,7 +184,9 @@ export default {
       }
     };
 
-    // Calculate path between start and end points
+    /**
+     * Calculate path between start and end points
+     */
     const calculatePath = () => {
       if (startPoint.value && endPoint.value) {
         // Clear the path to reset animations
@@ -182,28 +206,28 @@ export default {
       }
     };
 
-    // Load default parking lot design and set fixed start point
-    const loadDefaultDesign = async () => {
+    /**
+     * Load default parking lot design and set fixed start point
+     */
+    const loadDefaultDesign = () => {
       try {
         // First load the parking spot IDs from CSV
-        await loadParkingSpotIdsFromCSV();
+        loadParkingSpotIdsFromCSV();
 
-        // Load the JSON file
-        const response = await fetch("/src/assets/parking-lot-design.json");
-
-        if (!response.ok) {
-          console.error("Failed to load JSON file:", response.statusText);
-          return;
-        }
-
-        const designData = await response.json();
+        // Use either the custom JSON or the default imported one
+        const designData =
+          props.customDesignJSON || defaultParkingLotDesignJSON;
 
         // Initialize the grid with the loaded design
         grid.value = initializeGrid(designData.grid);
 
-        // Set a fixed start point (for example, at the entrance)
-        // You can adjust this to be wherever your fixed start point should be
-        startPoint.value = { row: 18, col: 27 };
+        // Set a fixed start point from the JSON data or use default
+        if (designData.startPoint) {
+          startPoint.value = designData.startPoint;
+        } else {
+          // Default fallback position if not specified in JSON
+          startPoint.value = { row: 18, col: 27 };
+        }
 
         // Reset end point and path
         endPoint.value = null;
@@ -216,7 +240,13 @@ export default {
       }
     };
 
-    // Get cell classes
+    /**
+     * Get CSS classes for a cell
+     * @param {number} row - Grid row index
+     * @param {number} col - Grid column index
+     * @param {Object} cellState - Cell state object
+     * @returns {Array} - Array of CSS class names
+     */
     const getCellClasses = (row, col, cellState) => {
       const classes = ["grid-cell"];
 
@@ -232,7 +262,7 @@ export default {
         classes.push("parking-line-v");
       }
 
-      // 检查是否有编号
+      // Check if the cell has a number
       const hasNumber = getDisplayParkingNumber(row, col, cellState) !== null;
 
       // Add classes for pathfinding
@@ -242,7 +272,7 @@ export default {
         startPoint.value.col === col
       ) {
         classes.push("start-point");
-        // 如果起点有编号，添加额外的类
+        // If start point has a number, add additional class
         if (hasNumber) {
           classes.push("with-number");
         }
@@ -254,122 +284,92 @@ export default {
         endPoint.value.col === col
       ) {
         classes.push("end-point");
-        // 如果终点有编号，添加额外的类
+        // If end point has a number, add additional class
         if (hasNumber) {
           classes.push("with-number");
         }
       }
 
-      // 检查是否为路径的一部分（不包括起点和终点）
-      if (
-        isInPath(row, col) &&
-        !(
-          startPoint.value &&
-          startPoint.value.row === row &&
-          startPoint.value.col === col
-        ) &&
-        !(
-          endPoint.value &&
-          endPoint.value.row === row &&
-          endPoint.value.col === col
-        )
-      ) {
-        // 如果有编号，使用带编号的路径类
-        if (hasNumber) {
-          classes.push("path-with-number");
-        } else {
-          classes.push("path");
+      // Mark cells in the path
+      if (isPathVisible.value && path.value.length > 0) {
+        // Check if this cell is in the path
+        const inPath = path.value.some(
+          (point) => point.row === row && point.col === col
+        );
+        if (inPath) {
+          classes.push("path-cell");
+          // Determine if this is the start, end, or middle of the path
+          if (path.value[0].row === row && path.value[0].col === col) {
+            classes.push("path-start");
+          } else if (
+            path.value[path.value.length - 1].row === row &&
+            path.value[path.value.length - 1].col === col
+          ) {
+            classes.push("path-end");
+          } else {
+            classes.push("path-middle");
+          }
         }
       }
 
       return classes;
     };
 
-    // Get cell styles (for path animation)
+    /**
+     * Get CSS styles for a cell
+     * @param {number} row - Grid row index
+     * @param {number} col - Grid column index
+     * @returns {Object} - CSS style object
+     */
     const getCellStyles = (row, col) => {
-      if (
-        isInPath(row, col) &&
-        !(
-          startPoint.value &&
-          startPoint.value.row === row &&
-          startPoint.value.col === col
-        ) &&
-        !(
-          endPoint.value &&
-          endPoint.value.row === row &&
-          endPoint.value.col === col
-        )
-      ) {
-        return {
-          "animation-delay": getPathAnimationDelay(row, col),
-        };
+      const styles = {};
+
+      // If this cell is in the path, add a delay for animation
+      if (isPathVisible.value && path.value.length > 0) {
+        const pathIndex = path.value.findIndex(
+          (point) => point.row === row && point.col === col
+        );
+        if (pathIndex >= 0) {
+          // Add animation delay based on position in path
+          styles.animationDelay = `${pathIndex * 0.1}s`;
+        }
       }
-      return {};
+
+      return styles;
     };
 
-    // Check if a cell is in the path
-    const isInPath = (row, col) => {
-      return (
-        isPathVisible.value &&
-        path.value.some((point) => point.row === row && point.col === col)
-      );
-    };
-
-    // Get the index of a cell in the path
-    const getPathIndex = (row, col) => {
-      return path.value.findIndex(
-        (point) => point.row === row && point.col === col
-      );
-    };
-
-    // Calculate animation delay for path cells
-    const getPathAnimationDelay = (row, col) => {
-      const pathIndex = getPathIndex(row, col);
-      if (pathIndex === -1) return 0;
-
-      const totalPathLength = path.value.length;
-      if (totalPathLength <= 1) return 0;
-
-      const delayPerCell = 0.3 / (totalPathLength - 1);
-      const delay = pathIndex * delayPerCell;
-
-      return Math.min(delay, 0.3).toFixed(3) + "s";
-    };
-
-    // Get the display number for a cell
+    /**
+     * Get display parking number for a cell
+     * @param {number} row - Grid row index
+     * @param {number} col - Grid column index
+     * @param {Object} cellState - Cell state object
+     * @returns {string|null} - Parking number to display or null
+     */
     const getDisplayParkingNumber = (row, col, cellState) => {
-      // Show parking number only for parking spaces and open areas
-      if (
-        cellState.type !== "parking-space" &&
-        cellState.type !== "open-area"
-      ) {
-        return null;
-      }
-
-      // Priority order:
-      // 1. Manually set number in cell state
-      // 2. CSV-based parking spot ID
-
+      // First check for manually set number in cell state
       if (cellState.number) {
         return cellState.number;
-      } else {
-        return getSpotId(row, col);
       }
+
+      // If not in cell state, check in CSV data
+      return getSpotId(row, col);
     };
 
-    // Load the default design when the component is mounted
+    // Load the design on component mount
     onMounted(() => {
       loadDefaultDesign();
     });
 
     return {
       grid,
+      parkingSpotIds,
       startPoint,
       endPoint,
       path,
       isPathVisible,
       spotIdToSearch,
       handleSpotSearch,
+      calculatePath,
       getCellClasses,
       getCellStyles,
       getDisplayParkingNumber,
@@ -380,173 +380,190 @@ export default {
 
 <style>
 .parking-table {
+  font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  padding: 20px;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .search-container {
   display: flex;
-  gap: 10px;
+  margin-bottom: 20px;
   width: 100%;
   max-width: 400px;
 }
 
 .spot-search-input {
   flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-right: none;
+  border-radius: 4px 0 0 4px;
   font-size: 14px;
 }
 
 .search-button {
-  padding: 10px 15px;
-  background-color: #673ab7;
+  padding: 8px 16px;
+  background-color: #4caf50;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 0 4px 4px 0;
   cursor: pointer;
   font-size: 14px;
+  transition: background-color 0.3s;
 }
 
 .search-button:hover {
-  background-color: #5e35b1;
+  background-color: #388e3c;
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(30, 22px);
-  grid-template-rows: repeat(20, 22px);
+  grid-template-columns: repeat(30, 20px);
+  grid-template-rows: repeat(20, 20px);
   gap: 1px;
-  background-color: #e9ecef;
-  border: 2px solid #ced4da;
-  width: fit-content;
-  border-radius: 4px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  padding: 2px;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .grid-cell {
-  width: 22px;
-  height: 22px;
-  background-color: white;
-  border-radius: 2px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
+  font-size: 9px;
+  user-select: none;
+}
+
+/* Cell types */
+.open-area {
+  background-color: #f0f0f0;
 }
 
 .parking-space {
-  background-color: #3d7edb !important;
-}
-
-.open-area {
-  background-color: #a5d8ff !important;
+  background-color: #e0e0e0;
 }
 
 .facility {
-  background-color: #ffe082 !important;
+  background-color: #d0d0d0;
 }
 
-.parking-line-h {
-  border-bottom: 3px solid #333;
+/* Parking lines */
+.parking-line-h::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #999;
 }
 
-.parking-line-v {
-  border-right: 3px solid #333;
+.parking-line-v::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #999;
 }
 
+/* Path highlighting */
 .start-point {
-  background-color: rgba(76, 175, 80, 0.7) !important;
-  position: relative;
-  z-index: 1;
-}
-
-.start-point::after {
-  content: "S";
-  position: absolute;
-  top: 50%; /* 默认居中 */
-  left: 50%;
-  transform: translate(-50%, -50%);
+  background-color: #4caf50 !important;
   color: white;
-  font-weight: bold;
-  font-size: 14px;
-  z-index: 1;
-}
-
-.end-point {
-  background-color: rgba(244, 67, 54, 0.7) !important;
-  position: relative;
-  z-index: 1;
-}
-
-.end-point::after {
-  content: "E";
-  position: absolute;
-  top: 50%; /* 默认居中 */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-weight: bold;
-  font-size: 14px;
-  z-index: 1;
-}
-
-.path {
-  background-color: rgba(33, 150, 243, 0.5) !important; /* 蓝色调 */
-  box-shadow: inset 0 0 0 1px rgba(25, 118, 210, 0.7); /* 添加内阴影作为边框 */
-  animation: pathAppear 0.3s ease forwards;
-  position: relative;
-  z-index: 1;
-}
-
-.path-with-number {
-  background-color: rgba(33, 150, 243, 0.5) !important; /* 蓝色调 */
-  box-shadow: inset 0 0 0 1px rgba(25, 118, 210, 0.7); /* 添加内阴影作为边框 */
-  animation: pathAppear 0.3s ease forwards;
-  position: relative;
-  z-index: 1;
-}
-
-@keyframes pathAppear {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.parking-number {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 7px;
-  line-height: 1;
-  color: white;
-  pointer-events: none;
   z-index: 2;
 }
 
-/* 当起点/终点有编号时，将标记移到上半部分 */
-.start-point.with-number::after,
-.end-point.with-number::after {
-  top: 30%;
+.end-point {
+  background-color: #f44336 !important;
+  color: white;
+  z-index: 2;
 }
 
-/* 当编号出现在起点或终点格子上时，将其显示在下半部分 */
+.path-cell {
+  animation: pulse 1.5s infinite;
+  background-color: #2196f3 !important;
+  z-index: 1;
+}
+
+.path-start {
+  background-color: #4caf50 !important;
+}
+
+.path-end {
+  background-color: #f44336 !important;
+}
+
+.path-middle {
+  background-color: #2196f3 !important;
+}
+
+/* Animation for path cells */
+@keyframes pulse {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+/* Parking spot numbers */
+.parking-number {
+  font-size: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
 .start-point.with-number .parking-number,
 .end-point.with-number .parking-number {
-  top: 70%;
+  color: white;
 }
 
-@media (max-height: 700px) {
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(30, 25px);
+    grid-template-rows: repeat(20, 25px);
+  }
+
+  .grid-cell {
+    width: 25px;
+    height: 25px;
+    font-size: 11px;
+  }
+
   .parking-number {
-    font-size: 6px;
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid-container {
+    grid-template-columns: repeat(30, 30px);
+    grid-template-rows: repeat(20, 30px);
+  }
+
+  .grid-cell {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .parking-number {
+    font-size: 11px;
   }
 }
 </style>

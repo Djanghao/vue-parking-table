@@ -1,6 +1,6 @@
 {
   "name": "@houston_zhang/vue-parking-table",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A Vue 3 component for visualizing and interacting with parking lot layouts",
   "main": "dist/vue-parking-table.js",
   "module": "dist/vue-parking-table.mjs",
